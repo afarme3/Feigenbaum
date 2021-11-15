@@ -13,11 +13,11 @@ xvals = []
 
 #Run logistic map equation to generate r vs x plot
 #for xinit in x0:
-r = 3.5
+r = 3.56
 nXiters = 200
-rScaler = 0.0001
-while r <= 4:
-        x = x0[6]  
+rScaler = 0.00005
+x = x0[6]
+while r <= 4:  
         for xIter in range(0,nXiters):
             x = r*x*(1-x)
             rvals.append(r)
@@ -27,13 +27,13 @@ while r <= 4:
 
 #plot the map
 colorscale = np.divide(np.array(rvals), 4)
-figure = plt.figure(figsize=(11, 8.5), tight_layout=True)
+figure = plt.figure(tight_layout=True)
 plot1 = figure.add_subplot(1,1,1, projection="scatter_density")
 #plot1.scatter_density(rvals, xvals, dpi=50, downres_factor=1, cmap="Blues")
 plot1.scatter(rvals, xvals, s=0.01, c=colorscale, cmap="winter")
 plt.xlabel("R (resolution of "+str(rScaler)+")")
 plt.ylabel("X (Iterated "+str(nXiters)+" times per R value)")
 plt.title("Logistic Map (3.5 < r)")
-plt.savefig("logisticMap.png", orientation="landscape", bbox_inches="tight", dpi=200)
-#plt.show()
+#plt.savefig("logisticMap.png", orientation="landscape", bbox_inches="tight", dpi=200)
+plt.show()
     
