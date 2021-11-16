@@ -146,6 +146,7 @@ test = hyperbrot(100)
 test.render(precision=40, xRange=2, iRange=2, aCenter=4, aRange=3)
 test.plot(resolutionScale=100, colorMap="cool")
         
+#Try vispy rendering
 
 
 
