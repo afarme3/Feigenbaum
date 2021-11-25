@@ -15,8 +15,8 @@ outputVals = []
 
 #Run logistic map equation to generate r vs x plot
 #for xinit in x0:
-r = 3.5
-nXiters = 150
+r = 3
+nXiters = 200
 rScaler = 0.0005
 x = x0[6]
 while r <= 4:  
@@ -40,12 +40,24 @@ for neighbor in neighbors:
     neighborDensity = len(neighbor)/(radius**2)
     density.append((neighborDensity/len(rvals)))
 
-#Plot in 3d
+
 colorscale = np.divide(np.array(rvals), 4)
+
+#Plot in 3d
 matplot = plt.figure()
 ax = matplot.add_subplot(projection="3d")
-ax.scatter(rvals, xvals, density, s=0.01, c=density, cmap="winter")
+ax.scatter(rvals, xvals, density, s=0.01, c=colorscale, cmap="autumn")
 ax.set_xlabel("R (resolution of "+str(rScaler)+")")
-ax.set_ylabel("X (Iterated "+str(nXiters)+" times per R value)")
-ax.set_zlabel("Point Density (scaled, with search radius "+str(radius)+")")
+ax.set_ylabel("X ("+str(nXiters)+" iterations)")
+ax.set_zlabel("Point Density (radius "+str(radius)+")")
+plt.show()
+
+quit()
+
+#Plot 2d R vs density - looks like lyapunov exponent!
+matplot = plt.figure()
+ax = matplot.add_subplot()
+ax.scatter(rvals, density, s=0.01, c=colorscale, cmap="autumn")
+ax.set_xlabel("R (resolution of "+str(rScaler)+")")
+ax.set_ylabel("Point Density (radius "+str(radius)+")")
 plt.show()
