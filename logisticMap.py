@@ -13,9 +13,9 @@ xvals = []
 
 #Run logistic map equation to generate r vs x plot
 #for xinit in x0:
-r = 3.56
-nXiters = 200
-rScaler = 0.00005
+r = 1
+nXiters = 100
+rScaler = 0.01
 x = x0[6]
 while r <= 4:  
         for xIter in range(0,nXiters):
