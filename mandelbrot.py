@@ -142,7 +142,7 @@ class hyperbrot:
         plt.show()
 
 
-test = hyperbrot(100)
+test = hyperbrot(200)
 test.render(precision=40, xRange=2, iRange=2, aCenter=4, aRange=3)
 test.plot(resolutionScale=100, colorMap="cool")
         
