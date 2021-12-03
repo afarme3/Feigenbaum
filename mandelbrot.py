@@ -60,7 +60,7 @@ class mandelbrot:
         ax = matplot.add_subplot()
 
         #Create scatter plot
-        ax.scatter(self.points[0], self.points[1], s=100/self.resolution, c=self.points[2], alpha=self.points[3], cmap=colorMap)
+        ax.scatter(self.points[0], self.points[1], s=200/self.resolution, c=self.points[2], alpha=self.points[3], cmap=colorMap)
         plt.show()
 
 class hyperbrot:
@@ -142,16 +142,6 @@ class hyperbrot:
         ax.set_zlabel("Real Axis (x)")
         plt.show()
 
-
-#test = hyperbrot(100)
-#test.render(precision=40, xRange=2, iRange=2, aCenter=4, aRange=3)
-#test.plot(resolutionScale=100, colorMap="cool")
-
-test2 = mandelbrot(400)
-test2.render(2.99, precision=100, xCenter=-0, xRange=1.5, yRange=1.5)
-test2.plot(colorMap="magma")       
-
-#Try vispy rendering
 
 
 

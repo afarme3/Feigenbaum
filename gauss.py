@@ -33,7 +33,7 @@ class gauss:
         ax.set_ylabel("X (Iterated "+str(self.nIters)+" times per beta")
         plt.title("Gauss Iterated Map with alpha="+str(self.alpha))
 
-        return matplot
+        plt.show()
 
 class multiGauss:
     def __init__(self, aresolution, bresolution, aMin=3, aMax=7):
@@ -74,14 +74,4 @@ class multiGauss:
         ax.set_zlabel("Alpha (Resolution of "+str(self.aRes)+")")
         plt.title("3d Gauss Map")
 
-        return matplot
-
-#test = multiGauss(aresolution=0.1, bresolution=0.01, aMin=2, aMax=8)
-#test.render()
-#test.plot(colormap="winter")
-#plt.show()
-
-test2 = gauss(bresolution=0.001, a=7)
-test2.render(nIterations=250)
-test2.plot()
-plt.show()
+        plt.show()
