@@ -69,7 +69,7 @@ class hyperbrot:
 
     #Function to render hyperbrot set with pixel width/height "resolution"^2 and exponent range 
     #Option renderBorder will save the points which escape to output array
-    def render(self, renderBorder=False, precision=None, xRange=2, iRange=2, aRange=1, xCenter=0, iCenter=0, aCenter=2):
+    def render(self, renderInterior=True, renderBorder=False, precision=None, xRange=2, iRange=2, aRange=1, xCenter=0, iCenter=0, aCenter=2):
         #Initialize precision default if no value is supplied
         if precision is None:
             precision = round(self.resolution/2)
@@ -117,11 +117,12 @@ class hyperbrot:
                         
                     #If the point has not escaped, set colormap index to 0
                     if hasEscaped == False:
-                        output[0].append(x)
-                        output[1].append(y)
-                        output[2].append(a)
-                        output[3].append((c.real**2)+(c.imag**2))
-                        output[4].append(1)
+                        if renderInterior:
+                            output[0].append(x)
+                            output[1].append(y)
+                            output[2].append(a)
+                            output[3].append((c.real**2)+(c.imag**2))
+                            output[4].append(1)
             
             self.points = output
     
@@ -142,10 +143,21 @@ class hyperbrot:
         plt.show()
 
 
+<<<<<<< HEAD
 test = hyperbrot(200)
 test.render(precision=40, xRange=2, iRange=2, aCenter=4, aRange=3)
 test.plot(resolutionScale=100, colorMap="cool")
         
+=======
+#test = hyperbrot(100)
+#test.render(precision=40, xRange=2, iRange=2, aCenter=4, aRange=3)
+#test.plot(resolutionScale=100, colorMap="cool")
+
+test2 = mandelbrot(400)
+test2.render(2.99, precision=100, xCenter=-0, xRange=1.5, yRange=1.5)
+test2.plot(colorMap="magma")       
+
+>>>>>>> c3a066c5cef86356853856481aec1af9cb52f254
 #Try vispy rendering
 
 
