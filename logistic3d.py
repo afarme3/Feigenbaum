@@ -12,6 +12,8 @@ x0 = [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]
 rvals = []
 xvals = []
 outputVals = []
+lvals = []
+lyapunovVals = [[],[]]
 
 #Run logistic map equation to generate r vs x plot
 #for xinit in x0:
@@ -19,12 +21,17 @@ r = 3
 nXiters = 200
 rScaler = 0.0005
 x = x0[6]
+
 while r <= 4:  
+        tempLvals = []
         for xIter in range(0,nXiters):
             x = r*x*(1-x)
+            l = np.log(abs(r - 2*r*x))
             rvals.append(r)
             xvals.append(x)
             outputVals.append([r, x])
+            tempLvals.append(l)
+            lvals.append(l)
         r += rScaler 
 
 #Gets an array which stores [r,x] values
@@ -46,7 +53,7 @@ colorscale = np.divide(np.array(rvals), 4)
 #Plot in 3d
 matplot = plt.figure()
 ax = matplot.add_subplot(projection="3d")
-ax.scatter(rvals, xvals, density, s=0.01, c=colorscale, cmap="autumn")
+ax.scatter(rvals, xvals, lvals, s=0.01, c=lvals, cmap="PuBuGn")
 ax.set_xlabel("R (resolution of "+str(rScaler)+")")
 ax.set_ylabel("X ("+str(nXiters)+" iterations)")
 ax.set_zlabel("Point Density (radius "+str(radius)+")")
