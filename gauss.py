@@ -1,8 +1,12 @@
 # gauss.py - a script to render gauss iterative map bifurcation diagrams
 import matplotlib.pyplot as plt
+import utils 
+from matplotlib import cm
+import open3d as o3d
 import math
 import numpy as np
 
+#Class to render 2-d gauss maps with fixed alpha and plot with mpl
 class gauss:
     def __init__(self, bresolution, a):
         self.bRes = bresolution
@@ -34,6 +38,20 @@ class gauss:
         plt.title("Gauss Iterated Map with alpha="+str(self.alpha))
 
         plt.show()
+
+#What if I could render it across the alpha-axis?
+#A parametric space. 
+#Fractal structures must exceed the dimension of n of its axes
+#n is equal to the number of parameters which can be varied to form axes. 
+#Fractal differentiation. 
+#The rate of change of roughness. 
+#Multifractal singularity spectrum. 
+#A collection of exponents. Dimensions.
+#Relative dimensionality between instances. 
+
+#The Mandelbrot set is the bifurcation diagram of the Julia Set. 
+#What say you, Jean-Christophe?
+#That it bifurcates in multiple dimensions?
 
 class multiGauss:
     def __init__(self, aresolution, bresolution, aMin=3, aMax=7):
@@ -75,3 +93,5 @@ class multiGauss:
         plt.title("3d Gauss Map")
 
         plt.show()
+
+#What if I could compute the 

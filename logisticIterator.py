@@ -1,4 +1,4 @@
-#logisticMap.py - a program to render high-resolution images of the feigenbaum bifurcation cascade (logistic map)
+#logisticIterator.py: A script to print values of the 
 
 #Imports
 import numpy as np
