@@ -126,7 +126,7 @@ class hyperbrot:
             
             self.points = output
     
-    #Function to use matplot lib to plot the values
+    #Function to use matplotlib to plot the values
     def plot(self, colorMap="YlOrRd", plotBorder=False, resolutionScale=100):
         matplot = plt.figure()
         ax = matplot.add_subplot(projection="3d")
@@ -142,6 +142,19 @@ class hyperbrot:
         ax.set_zlabel("Real Axis (x)")
         plt.show()
 
+
+
+test = hyperbrot(200)
+test.render(precision=40, xRange=2, iRange=2, aCenter=4, aRange=3)
+test.plot(resolutionScale=100, colorMap="cool")
+        
+#test = hyperbrot(100)
+#test.render(precision=40, xRange=2, iRange=2, aCenter=4, aRange=3)
+#test.plot(resolutionScale=100, colorMap="cool")
+
+test2 = mandelbrot(400)
+test2.render(2.99, precision=100, xCenter=-0, xRange=1.5, yRange=1.5)
+test2.plot(colorMap="magma")       
 
 
 
