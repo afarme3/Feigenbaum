@@ -18,7 +18,7 @@ lyapunovVals = [[],[]]
 #Run logistic map equation to generate r vs x plot
 #for xinit in x0:
 r = 3
-nXiters = 200
+nXiters = 100
 rScaler = 0.0005
 x = x0[6]
 
